@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Syne, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import LenisProvider from '@/components/LenisProvider'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const syne = Syne({
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <LenisProvider>
             {children}
           </LenisProvider>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
