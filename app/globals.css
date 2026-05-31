@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   LIGHT THEME — CrowdFund-inspired green
+   ============================================= */
+:root {
+  --bg: #FFFFFF;
+  --bg-soft: #F3FAF5;
+  --bg-footer: #0B1220;
+  --text: #0F1B2D;
+  --muted: #5B6B7E;
+  --accent: #16A34A;
+  --accent-2: #22C55E;
+  --accent-soft: #DCFCE7;
+  --card: #FFFFFF;
+  --border: rgba(22, 163, 74, 0.15);
+}
+
+/* =============================================
+   DARK THEME — Ishu's signature saffron+cyan
+   ============================================= */
+.dark {
+  --bg: #040812;
+  --bg-soft: #080F22;
+  --bg-footer: #02040A;
+  --text: #E2E8F0;
+  --muted: #94A3B8;
+  --accent: #F59E0B;
+  --accent-2: #06B6D4;
+  --accent-soft: rgba(245, 158, 11, 0.10);
+  --card: rgba(13, 22, 48, 0.7);
+  --border: rgba(6, 182, 212, 0.15);
+}
+
+/* =============================================
+   BASE
+   ============================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+/* =============================================
+   SCROLLBAR
+   ============================================= */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-soft);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+/* =============================================
+   TYPOGRAPHY SCALE
+   ============================================= */
+.display {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.mono-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-family: var(--font-mono);
+}
+
+/* =============================================
+   DIVIDER
+   ============================================= */
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border),
+    var(--accent),
+    var(--border),
+    transparent
+  );
+}
+
+/* =============================================
+   GLASS CARD
+   ============================================= */
+.glass-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+}
+
+/* =============================================
+   SECTION LABEL (// prefix)
+   ============================================= */
+.section-label::before {
+  content: '// ';
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+/* =============================================
+   GRADIENT TEXT ACCENT
+   ============================================= */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =============================================
+   3D TILT CARD
+   ============================================= */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease;
+}
+
+/* =============================================
+   REDUCED MOTION
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
