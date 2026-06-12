@@ -1,51 +1,12 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import dynamic from 'next/dynamic'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useTheme } from 'next-themes'
 import { vision } from '@/lib/data'
 import Link from 'next/link'
 
-const Model3D = dynamic(() => import('./three/Model3D'), { ssr: false })
-
-gsap.registerPlugin(ScrollTrigger)
-
 export default function Vision() {
-  const { resolvedTheme } = useTheme()
-  const rocketRef = useRef<HTMLDivElement>(null)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const rocket = rocketRef.current
-    const section = sectionRef.current
-    if (!rocket || !section) return
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 30%',
-        toggleActions: 'play none none reverse',
-      },
-    })
-
-    tl.fromTo(
-      rocket,
-      { y: 0, opacity: 1, scale: 1 },
-      { y: -80, opacity: 0, scale: 1.4, duration: 1, ease: 'power2.inOut' }
-    )
-
-    return () => {
-      tl.kill()
-      ScrollTrigger.getAll().forEach((st) => st.refresh())
-    }
-  }, [])
-
   return (
     <section
-      ref={sectionRef}
       id="vision"
       className="py-24 lg:py-36 bg-bg relative overflow-hidden"
     >
@@ -58,10 +19,6 @@ export default function Vision() {
       </div>
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 lg:px-8 text-center">
-        {/* Rocket — GSAP launch on scroll */}
-        <div ref={rocketRef} className="w-48 h-48 mx-auto mb-4 will-change-transform">
-          <Model3D src="/models/rocket.glb" variant="rocket" theme={resolvedTheme ?? 'dark'} />
-        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
