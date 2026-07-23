@@ -18,7 +18,7 @@ export const about = {
   text: [
     "I'm a BCA final-year student at SMS College, Varanasi — but I've spent these years building, not just studying.",
     'From study-partner apps to civic grievance platforms, I ship things that solve real problems. As Tech Lead at Glosseo, I take ideas from zero to deployed.',
-    "I work across the full stack — React, Flutter, Django, Firebase, and AI tooling — and I'm most at home when I'm turning a messy problem into a clean, shipped product.",
+    "I work across the full stack — MERN, React Native, Flutter, Firebase, and AI tooling — and I'm most at home when I'm turning a messy problem into a clean, shipped product.",
   ],
   quickFacts: [
     { value: '6', label: 'Projects Shipped' },
@@ -58,23 +58,36 @@ export const stats = [
 
 export const skills = [
   {
-    category: 'Frontend & Mobile',
-    items: ['React.js', 'Next.js', 'React Native', 'Flutter', 'HTML/CSS', 'Tailwind CSS'],
+    category: 'Languages',
+    items: ['JavaScript', 'TypeScript', 'Python', 'Dart', 'C++'],
   },
   {
-    category: 'Backend & Database',
-    items: ['Django', 'Node.js', 'Firebase', 'Firestore', 'MySQL', 'REST APIs'],
+    category: 'Frontend',
+    items: [
+      'React.js',
+      'Next.js',
+      'React Native',
+      'Flutter',
+      'Tailwind CSS',
+      'HTML/CSS',
+    ],
   },
   {
-    category: 'AI / ML & LLMs',
-    items: ['Ollama', 'LangChain', 'TF-IDF / NLP', 'Whisper', 'LM Studio', 'Python ML'],
+    category: 'Backend',
+    items: ['Node.js', 'Express.js', 'Flask', 'REST APIs'],
   },
   {
-    category: 'Languages & Tools',
-    items: ['JavaScript', 'Python', 'Dart', 'C++', 'PHP', 'Git / GitHub'],
+    category: 'Tools & Database',
+    items: [
+      'Firebase',
+      'Firestore',
+      'MySQL',
+      'Git',
+      'GitHub',
+      'Firebase Functions',
+    ],
   },
 ]
-
 export type ProjectStatus = 'shipped' | 'in-progress' | 'concept'
 
 export const projects = [
@@ -184,11 +197,11 @@ export const experience = [
     role: 'Tech Lead',
     org: 'Glosseo',
     period: '2024 – Present',
-    location: 'Varanasi, UP',
+    location: 'Glosseo, Bangalore (remote-first)',
     bullets: [
-      'Led a team of 2–3 developers; architected full-stack infrastructure.',
-      'Defined coding standards, conducted code reviews, managed deployment pipelines.',
-      'Translated stakeholder requirements into engineering decisions.',
+      'Sole technology owner for a live Shopify e-commerce business, managing the storefront, product catalog, order operations, third-party applications, and platform integrations end-to-end.',
+      'Designed and implemented workflow automations that reduced 1–2 days of manual operational work to just 2–3 hours, improving efficiency by approximately 85%.',
+      'Collaborated directly with non-technical stakeholders to understand business requirements and translate them into reliable, scalable technical solutions.',
     ],
   },
   {
@@ -197,7 +210,7 @@ export const experience = [
     period: '2023 – Present',
     location: 'Varanasi, UP',
     bullets: [
-      'Self-taught across React, Flutter, Django, Firebase, and AI tooling.',
+      'Self-taught across React, Flutter, Firebase, and AI tooling.',
       'Shipped products alongside academics; led college tech projects and entrepreneurial ventures.',
     ],
   },
